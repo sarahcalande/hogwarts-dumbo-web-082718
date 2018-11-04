@@ -14,6 +14,7 @@ const Nav = (props) => {
 			<button onClick={props.handleSort}>Sort by Name</button>
 			<button onClick={props.handleWeight}>Sort by Weight</button>
 			<button onClick={props.handleGreased}>Filter for Greased</button>
+		 	<button onClick={this.hideHogs}>Hide Hogs</button>
 		</div>
 	)
 }

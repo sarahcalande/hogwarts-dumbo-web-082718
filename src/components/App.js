@@ -10,7 +10,6 @@ class App extends Component {
 
 
   handleSort= () => {
-    // console.log(this.state.filteredHogs.map(hogObject => hogObject.sort(name))))
     let results = (this.state.filteredHogs.sort(function(x, y) {
       return x.name.localeCompare(y.name)
     }))
@@ -30,6 +29,17 @@ class App extends Component {
     })
   }
 
+  hideHogs=()=>{
+    if (this.state.shown == true){
+      this.setState({
+        shown: false
+      })
+    } else {
+      this.setState({
+        shown: true
+      })
+    }
+  }
 
 
   handleGreased = () => {
@@ -40,6 +50,8 @@ class App extends Component {
   })
 
   }
+
+
 
   state = {
     hogsArray: hogs,
@@ -53,7 +65,7 @@ class App extends Component {
     return (
       <div className="App">
           < Nav handleSort = {this.handleSort} handleWeight = {this.handleWeight} handleGreased = {this.handleGreased}/>
-        < Container hogsArray = {this.state.filteredHogs} />
+        < Container className="ui grid container" hogsArray = {this.state.filteredHogs} />
 
       </div>
     )
